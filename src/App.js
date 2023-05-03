@@ -13,15 +13,23 @@ function App() {
 
 function Counter() {
   const [count, setCount] = useState(0);
+  //setcount is a function
 
-  function IncreaseCount() {
-    const newCount = count + 1;
-    setCount(newCount);
-  }
+  //option 1
+  // const increaseCount = () => {
+  //   const newCount = count + 1;
+  //   setCount(newCount);
+  // }
+
+  //option 2(shortcut version)
+  const increaseCount = () => setCount(count + 1)
+  //decrease
+  const decreaseCount = () => setCount(count - 1)
   return (
     <div>
       <h2>count:{count}</h2>
-      <button onClick={IncreaseCount}>Increase</button>
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreaseCount}>Decrease</button>
     </div>
   )
 }
